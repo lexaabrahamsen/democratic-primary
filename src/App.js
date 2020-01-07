@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// import Firebase from "firebase";
+// import config from "./config";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -6,54 +8,85 @@ const list = [
   {
     id: 1,
     name: "Elizabeth Warren",
-    votes: 0
+    votes: 0,
+    image:
+      "https://specials-images.forbesimg.com/imageserve/1180350427/960x0.jpg?fit=scale"
   },
   {
     id: 2,
     name: "Bernie Sanders",
-    votes: 0
+    votes: 0,
+    image:
+      "https://specials-images.forbesimg.com/imageserve/1180350427/960x0.jpg?fit=scale"
   },
   {
     id: 3,
-    name: "Pete Buttigieg",
-    votes: 0
+    name: "Joe Biden",
+    votes: 0,
+    image:
+      "https://specials-images.forbesimg.com/imageserve/1180350427/960x0.jpg?fit=scale"
   },
   {
     id: 4,
-    name: "Tom Seyer",
-    votes: 0
+    name: "Pete Buttigieg",
+    votes: 0,
+    image:
+      "https://specials-images.forbesimg.com/imageserve/1180350427/960x0.jpg?fit=scale"
   },
   {
     id: 5,
-    name: "Joe Biden",
-    votes: 0
+    name: "Andrew Yang",
+    votes: 0,
+    image:
+      "https://specials-images.forbesimg.com/imageserve/1180350427/960x0.jpg?fit=scale"
   },
   {
     id: 6,
-    name: "Cory Booker",
-    votes: 0
-  },
-  {
-    id: 7,
     name: "Amy Klobuchar",
-    votes: 0
-  },
-  {
-    id: 8,
-    name: "Andrew Yang",
-    votes: 0
+    votes: 0,
+    image:
+      "https://specials-images.forbesimg.com/imageserve/1180350427/960x0.jpg?fit=scale"
   }
 ];
 
 class App extends Component {
-  handleEvent = e => console.log("button clicked for " + e);
+  // constructor(props) {
+  //   super(props);
+  //   Firebase.intializeApp(config.firebase);
+  // }
+
+  state = {
+    candidates: []
+  };
+
+  componentDidMount() {
+    this.setState({ candidates: list });
+  }
+
+  handleEvent = personId => {
+    const updatedList = this.state.candidates.map(person => {
+      if (person.id === personId) {
+        return Object.assign({}, person, {
+          votes: person.votes + 1
+        });
+      } else {
+        return person;
+      }
+    });
+
+    this.setState({
+      candidates: updatedList
+    });
+  };
 
   render() {
-    return list.map(person => (
+    return this.state.candidates.map(person => (
       <Candidate
         key={person.id}
+        id={person.id}
         name={person.name}
         votes={person.votes}
+        image={this.image}
         onVote={this.handleEvent}
       />
     ));
@@ -61,13 +94,17 @@ class App extends Component {
 }
 
 class Candidate extends Component {
-  handleClick = () => this.props.onVote(this.props.name);
+  handleClick = () => this.props.onVote(this.props.id);
 
   render() {
     return (
       <div className="App">
-        {this.props.name}
-        <button onClick={this.handleClick}>VOTE</button>
+        <image>{this.props.image}</image>
+        <h1 className="CandidateName">{this.props.name}</h1>
+        <h3>{this.props.votes}</h3>
+        <button className="VoteButton" onClick={this.handleClick}>
+          VOTE
+        </button>
       </div>
     );
   }
