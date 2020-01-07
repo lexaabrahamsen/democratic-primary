@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.Candidate {
+  text-align: center;
+  display: inline-block;
+  background-color: #057bff;
+  height: 300px;
+  width: 500px;
+  border: 1px solid #ececec;
+  border-radius: 15px;
+  overflow: hidden;
+  vertical-align: top;
+  margin: 5px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+}
