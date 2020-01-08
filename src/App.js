@@ -98,10 +98,9 @@ class Candidate extends Component {
 
   render() {
     return (
-      <div className="App">
-        <image>{this.props.image}</image>
-        <h1 className="CandidateName">{this.props.name}</h1>
-        <h3>{this.props.votes}</h3>
+      <div className="card">
+        <h1 className="candidateName">{this.props.name}</h1>
+        <h3 className="h3">{this.props.votes}</h3>
         <button className="VoteButton" onClick={this.handleClick}>
           VOTE
         </button>
