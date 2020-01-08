@@ -99,7 +99,7 @@ class Candidate extends Component {
   render() {
     return (
       <div className="card">
-        <h1 className="candidateName">{this.props.name}</h1>
+        <h1 className="">{this.props.name}</h1>
         <h3 className="h3">{this.props.votes}</h3>
         <button className="VoteButton" onClick={this.handleClick}>
           VOTE
