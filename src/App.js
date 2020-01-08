@@ -85,44 +85,33 @@ class Candidate extends Component {
 
   render() {
     return (
-      <div class="card">
-        <div class="card__image-container">
+      <div className="card">
+        <div className="card__image-container">
           <img
-            class="card__image"
+            className="card__image"
             src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80"
             alt=""
           />
         </div>
 
-        <svg class="card__svg" viewBox="0 0 800 500">
+        <svg className="card__svg" viewBox="0 0 800 500">
           <path
             d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
             stroke="transparent"
             fill="#333"
           />
           <path
-            class="card__line"
+            className="card__line"
             d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400"
             stroke="pink"
-            stroke-width="3"
+            strokeWidth="3"
             fill="transparent"
           />
         </svg>
-
-        <div class="card__content">
-          <h1 class="card__title">Lorem ipsum</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-            dolor praesentium at quod autem omnis, amet eaque unde perspiciatis
-            adipisci possimus quam facere illo et quisquam quia earum nesciunt
-            porro.
-            <h1>{this.props.name}</h1>
-            <h3>{this.props.votes}</h3>
-            <button className="VoteButton" onClick={this.handleClick}>
-              VOTE
-            </button>
-          </p>
-        </div>
+        <h1 className="card__content">{this.props.name}</h1>
+        <button onClick={this.handleClick}>VOTE</button>
+        <h3>{this.props.votes}</h3>
+        <p>Lorem ipsum dolor sit amet</p>
       </div>
     );
   }
