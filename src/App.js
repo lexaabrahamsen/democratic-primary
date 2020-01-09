@@ -85,33 +85,39 @@ class Candidate extends Component {
 
   render() {
     return (
-      <div className="card">
-        <div className="card__image-container">
-          <img
-            className="card__image"
-            src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80"
-            alt=""
-          />
-        </div>
+      <div id="root" class="container">
+        <div class="card">
+          <div class="card__image-container">
+            <img
+              class="card__image"
+              src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80"
+              alt=""
+            ></img>
 
-        <svg className="card__svg" viewBox="0 0 800 500">
-          <path
-            d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
-            stroke="transparent"
-            fill="#333"
-          />
-          <path
-            className="card__line"
-            d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400"
-            stroke="pink"
-            strokeWidth="3"
-            fill="transparent"
-          />
-        </svg>
-        <h1 className="card__content">{this.props.name}</h1>
-        <button onClick={this.handleClick}>VOTE</button>
-        <h3>{this.props.votes}</h3>
-        <p>Lorem ipsum dolor sit amet</p>
+            <svg class="card__svg" viewBox="0 0 800 500">
+              <path
+                d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500"
+                stroke="transparent"
+                fill="#333"
+              />
+              <path
+                class="card__line"
+                d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400"
+                stroke="pink"
+                stroke-width="3"
+                fill="transparent"
+              />
+            </svg>
+
+            <div class="card__content">
+              <h1 class="card__title">{this.props.name}</h1>
+              <h3>{this.props.votes}</h3>
+              <button class="VoteButton" onClick={this.handleClick}>
+                VOTE
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
