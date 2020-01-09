@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import Firebase from "firebase";
 // import config from "./config";
 // import logo from "./logo.svg";
+import ReactDOM from "react-dom";
 import "./App.css";
 
 const list = [
